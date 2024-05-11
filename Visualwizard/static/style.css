@@ -1,0 +1,11 @@
+body {
+  background-image: url("media/bg/bg-1.png");
+  background-size: cover;
+  background-position: center;
+}
+h1 {
+  color: #da0707;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 200px;
+}
