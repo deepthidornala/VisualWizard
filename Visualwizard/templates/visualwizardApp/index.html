@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{% static 'js/chatbot.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
   <h1>Image Enhancement</h1>
@@ -15,7 +15,7 @@
   <img src="{{ enhanced_image_url }}" alt="Enhanced Image">
   {% endif %}
 
-  <!-- <form action="" method="POST" enctype="multipart/form-data">
+<!--<form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}  # Include CSRF token for security
     <label for="original_image">Upload Image:</label>
     <input type="file" name="original_image" id="original_image">
@@ -50,7 +50,7 @@
       <br>
       <button type="submit">Enhance Image</button>
   </form>
-  <script>
+  <script >
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.querySelector('form');
       form.addEventListener('submit', async function(event) {

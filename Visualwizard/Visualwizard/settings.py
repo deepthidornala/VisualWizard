@@ -79,14 +79,16 @@ print(f"MEDIA_ROOT: {MEDIA_ROOT}")
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'visualwizarddb',
+        'NAME': 'Visualwizard',
         'USER': 'root',
-        'PASSWORD': 'mithra2052'
+        'PASSWORD':'Deepu@2101',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
-}
+}'''
 
 
 # Password validation
