@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <h1>Image Enhancement</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="enhancement_type">Enter Enhancement Method:</label>
+      <input
+        type="text"
+        id="enhancement_type"
+        name="enhancement_type"
+        required
+      />
+      <br />
+      <label for="factor">Enter Factor (Optional):</label>
+      <input type="number" id="factor" name="factor" step="0.1" />
+      <br />
+      <label for="original_image">Original Image:</label>
+      <input
+        type="file"
+        name="original_image"
+        id="original_image"
+        accept="image/*"
+        onchange="handlePreview(event)"
+        required
+      />
+      <br />
+      <button type="submit">Enhance Image</button>
+    </form>
+
+    <div class="image-container">
+      <h2>Original Image</h2>
+      <img
+        class="image hidden"
+        id="original_preview"
+        src=""
+        alt="Original Image"
+      />
+
+      <h2>Enhanced Image</h2>
+      <img
+        class="image hidden"
+        id="enhanced_preview"
+        src=""
+        alt="Original Image"
+      />
+    </div>
+
+    <!--<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}  # Include CSRF token for security
+    <label for="original_image">Upload Image:</label>
+    <input type="file" name="original_image" id="original_image">
+    <br>
+    <label for="enhancement_type">Enhancement Type:</label>
+    <select name="enhancement_type" id="enhancement_type">
+      <option value="brightness">Brightness</option>
+      <option value="contrast">Contrast</option>
+      <option value="sharpness">Sharpness</option>
+      <option value="scale">Image Scaling</option>
+      <option value="inverse">Inverse Transformation</option>
+      <option value="edge_detection">Edge Detection</option>
+      <option value="color_correction">Color Correction</option>
+      <option value="image_gradients">Image Gradients</option>
+      <option value="crop">Image Cropping</option>
+      <option value="rotate">Image Rotation</option>
+      <option value="blend">Image Blending</option>
+      <option value="thresholding">Image Thresholding</option>
+      <option value="deblurring">Image Deblurring</option>
+      <option value="noise_reduction">Noise Reduction</option>
+      </select> -->
+
+    <script>
+      function handlePreview(event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById("original_preview");
+        preview.src = URL.createObjectURL(file);
+        preview.classList.remove("hidden");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const response = await fetch("/chatbot/", {
+            method: "POST",
+            body: formData,
+          });
+          const data = await response.json();
+          if (data.error) {
+            alert(data.error);
+          } else {
+            const imageElement = document.getElementById("enhanced_preview");
+            imageElement.src = "data:image/jpeg;base64," + data.enhanced_image;
+            imageElement.classList.remove("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

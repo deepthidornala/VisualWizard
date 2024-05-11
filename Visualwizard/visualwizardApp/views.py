@@ -140,7 +140,7 @@ def index(request):
         #return render(request, 'visualwizardApp/index.html', context)
 
     else:
-        return render(request, 'visualwizardApp/index.html')
+        return render(request, 'index.html')
 
 def chatbot(request):
     if request.method == 'POST':
