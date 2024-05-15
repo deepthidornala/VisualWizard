@@ -12,12 +12,9 @@ body {
     margin-right: auto;
     width: 5cm;
     height: auto;
+    border: black 1px solid;
 }
-.quantico-regular {
-    font-family: "Quantico", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+
 .hidden {
     display: none;
  }
@@ -48,12 +45,15 @@ form {
     margin: 5px;
     width:25%;
     height:5cm;
+    border: black 2px solid;
+    box-shadow: 5px 5px 5px black;   
     background-color: #D9D9D9;
   }
   form input {
     margin: 10px;
     padding: 10px;
     font-size: 10px;
+    font-family: comic sans ms;
   }
  #i1{
     border-radius: 25px;
@@ -82,6 +82,7 @@ form {
     width: 150px;
     height: 10px;
     font-size: 15px;
+    font-family: comic sans ms;
     color: white;
 }
 .footer { 
