@@ -1,39 +1,95 @@
 body {
-  background-image: url("/static/bg-1.png");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-}
-h1 {
-  color: blue;
-  font-size: 50px;
-  text-align: center;
-  margin-top: 200px;
-}
-
+    background-image: url("/static/1.jpg");
+    background-size: 1550px 770px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+ 
 .image {
-  margin-left: auto;
-  margin-right: auto;
-  width: 10cm;
-  height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5cm;
+    height: auto;
 }
-
+.quantico-regular {
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 .hidden {
-  display: none;
+    display: none;
+ }
+@font-face {
+	font-family:'Super Mario'; 
+	src:url('https://assets.codepen.io/209981/SuperMario256-1.ttf');
+	font-weight: 400 900;
 }
-
+h2{
+    font-family:'Super Mario';
+    color: #257ACE;
+}
+  
 form {
-  margin-top: 50px;
+    margin-top: 30px;
 }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 
-.img-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  }
+  .display1 , .display2{
+    display:inline-block;
+    position: relative;
+    margin: 5px;
+    width:25%;
+    height:5cm;
+    background-color: #D9D9D9;
+  }
+  form input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 10px;
+  }
+ #i1{
+    border-radius: 25px;
+    background: skyblue;
+    padding: 10px;
+    width: 150px;
+    height: 20px;
+ }
+ #b1{
+    border-radius: 8px;
+    background: #76A2CE;
+    padding: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+
+    }
+#b1:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+#l1{
+    border-radius: 8px;
+    background: #257ACE;
+    padding: 10px;
+    width: 150px;
+    height: 10px;
+    font-size: 15px;
+    color: white;
 }
-
-form input {
-  margin: 10px;
-  padding: 10px;
-  font-size: 20px;
+.footer { 
+    position: absolute; 
+    max-width: 980px;
+    text-align: center;
+    margin-left: 1250px;
+    margin-top: 20px;
+    font-family:'Super Mario';
+    color: black;
 }
