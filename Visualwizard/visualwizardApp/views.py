@@ -52,6 +52,18 @@ def enhance_image(image, enhancement_type, factor=1.0):
         image_array = np.array(image)
         corrected_image_array = cv2.equalizeHist(image_array)
         return Image.fromarray(corrected_image_array)
+    elif enhancement_type == 'histogram_equalization':
+        # Apply histogram equalization
+        if len(image_array.shape) == 2:  # Grayscale image
+            image_array = cv2.equalizeHist(image_array)
+        else:  # Color image
+            # Convert the image from RGB to YUV
+            img_yuv = cv2.cvtColor(image_array, cv2.COLOR_RGB2YUV)
+            # Apply histogram equalization on the Y channel
+            img_yuv[:, :, 0] = cv2.equalizeHist(img_yuv[:, :, 0])
+            # Convert the YUV image back to RGB format
+            image_array = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2RGB)
+        return Image.fromarray(image_array)
     elif enhancement_type == 'image_gradients':
         # Compute image gradients using Sobel filter from OpenCV
         image_array = np.array(image)
